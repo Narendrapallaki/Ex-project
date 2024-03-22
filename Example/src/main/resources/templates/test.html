@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Email Form</title>
+</head>
+
+<body>
+	<h1>This is the run page</h1>
+	
+	<!-- <input type="file" id="file" name="file" accept=".xlsx,.pdf,.doc,.docx" title=".xlsx,.pdf,.doc,.docx">
+	 -->
+
+	<form th:action="@{/send-email}" method="post" enctype="multipart/form-data" >
+
+         <label for="subject"> subject</label>
+		<input type="text" placeholder="subject box" name="subject" id="subject">
+		<br >
+		<label for="text"> Text</label>
+		<input type="text" placeholder="Text box" name="text" id="text">
+		<br >
+		<!-- Email Input -->
+		<label for="toMail">Email:</label>
+		<input type="email" id="toMail" name="toMail" placeholder="Enter email">
+		<br>
+		<!-- File Input -->
+		<label for="file">Upload Excel File:</label>
+		<input type="file" id="file" name="file">
+		<br>
+		<label for="attFile">Attachement File:</label>
+		<input type="file" id="attFile" name="attFile" multiple>
+		<br>
+		
+		<!-- Submit Button -->
+		<input type="submit" value="Send Email">
+	</form>
+</body>
+
+</html>
